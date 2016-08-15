@@ -9,17 +9,33 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var display: UILabel!
+    
+    var userIsInTheMiddleOfTypingANumber:Bool = false
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBAction func appendDigit(sender: UIButton) {
+        let digit = sender.currentTitle!
+        
+        if userIsInTheMiddleOfTypingANumber {
+            display.text = display.text! + digit
+            
+        }else{
+            display.text=digit
+            userIsInTheMiddleOfTypingANumber=true
+            
+        }
+        // println("digit = \(digit)")
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    //배열
+    //스택
+    //람다 표현식
+    //함수 선언
+    //계산된 프로퍼티
+    
+    //초기화
+    
 }
 
